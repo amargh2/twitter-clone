@@ -1,0 +1,52 @@
+$blue: #1D9BF0;
+$large: 1200px;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr)
+}
+
+.sidebar {
+  display:flex;
+  justify-content:start;
+  flex-direction:column;
+  gap:.2rem;
+    div {
+      display:flex;
+      flex-wrap:nowrap;
+      button {
+        font-size:x-large;
+        border-radius: 2rem;
+        border: white solid;
+        background-color:white;
+        padding:.75rem;
+        div{
+          display:flex;
+          gap:.2rem;
+        }
+      }
+      button:hover{
+        background-color:#E1E8ED;
+      }
+    }
+}
+
+
+.logo{
+  display:flex;
+  justify-content:start;
+  color:$blue;
+}
