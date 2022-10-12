@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import SideBar from '../components/SideBar'
 import Post from '../components/Post'
-import Grid from '../components/Grid'
 export default function Home() {
   return (
     <div className='column'>
@@ -13,10 +11,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.grid}>
-        <div className={styles.column}>
+        <div className={styles.sidebarcolumn}>
           <SideBar></SideBar>
         </div>
-        <div className={styles.column}>
+        <div className={styles.postcolumn}>
           <Post></Post>
         </div>
       </div>

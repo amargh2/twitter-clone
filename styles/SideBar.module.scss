@@ -21,27 +21,51 @@ $screen-xl-min: 1200px;
 
 .sidebar {
   display:flex;
-  justify-content:start;
+  justify-content:center;
   flex-direction:column;
+  box-shadow: 0px 0px 1px gray;
   gap:.2rem;
     div {
       display:flex;
       flex-wrap:nowrap;
+      justify-content:start;
+      padding:.25rem;
       button {
         font-size:x-large;
         border-radius: 2rem;
         border: white solid;
         background-color:white;
-        padding:.75rem;
+        padding:.2rem .7rem .2rem .7rem;;
         div{
           display:flex;
           gap:.2rem;
+          align-items:center;
+          .words{
+            display:none;
+          }
+          @media(min-width:$screen-xl-min) {
+            .words{
+              display:flex;
+            }
+          }
         }
       }
       button:hover{
         background-color:#E1E8ED;
       }
     }
+}
+
+.sidebaravatar {
+  display:flex;
+  justify-content:center;
+  div{
+    display:flex;
+    justify-content:center;
+  }
+  img {
+    border-radius:50%;
+  }
 }
 
 #tweetbutton {

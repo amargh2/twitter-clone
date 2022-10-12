@@ -1,4 +1,36 @@
+$blue: #1D9BF0;
+$large: 1200px;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+
 .grid{
   display: grid;
-  grid-template-columns: repeat(6,1fr);
+  gap:.3rem;
+  grid-template-columns: repeat(10,1fr);
 }
+
+.postcolumn{
+  @media(min-width:$screen-md-min) {
+    grid-column:4/8
+  }
+  grid-column:2/11;  
+}
+
+.sidebarcolumn {
+  @media(min-width:$screen-md-min) {
+    grid-column:3/3
+  }
+  grid-column:1/1
+}
+

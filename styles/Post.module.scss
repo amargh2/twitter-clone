@@ -1,18 +1,35 @@
 $blue: #1D9BF0;
-
+$darkerblue: #0387df;
+$lighterblue:#b0defd;
 .postContainer {
- display: grid;
-  img{
-    height:100px;
-    width:100px;
-    border-radius:50%;
+  display:flex;
+  justify-content:start;
+  gap:.5rem;
+  box-shadow: 0px 0px 1px gray;
+  padding:3rem;
+    textarea{
+      height:3rem;
+      width:30rem;
+      column-span:all;
+      border: none;
+      resize:none;
+    }
+    textarea:focus{
+      outline:none;
+    }
+    img{
+      border-radius:50%;
+    }
+    div{
+      display:flex;
+      justify-content:end;
+      align-items:center;
+    }
   }
-  div{
-    display:flex;
-    align-items:center;
-    justify-content:right;
-    gap:.3rem
-  }
+
+
+.avatarform {
+  display:flex;
 }
 
 .tweetbutton{
@@ -20,9 +37,23 @@ $blue: #1D9BF0;
   padding: .75rem 1.5rem .75rem 1.5rem;
   border-radius:2rem;
   color:white;
+  border: white;
+  font-size:larger;
+  font-weight:bolder;
+}
+
+.tweetbutton:disabled{
+  background-color:$lighterblue;
+}
+
+.tweetbutton:disabled:hover{
+  background-color:$lighterblue;
+}
+
+.tweetbutton:hover{
+  background-color: $darkerblue;
 }
 
 .tweetcontainer{
   display:flex;
-  justify-content:right;
 }
