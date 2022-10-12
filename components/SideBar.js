@@ -9,7 +9,7 @@ import {CgProfile, CgMoreO} from 'react-icons/cg'
 import {GiQuill} from 'react-icons/gi'
 import Link from 'next/link'
 import {FaHashtag, FaRegBookmark, FaRegBell, FaList} from 'react-icons/fa'
-import styles from '../styles/Test.module.scss' 
+import styles from '../styles/SideBar.module.scss' 
 export default function SideBar() {
 
   return (
@@ -54,12 +54,12 @@ export default function SideBar() {
           </div>
           <div>
             <Link href='/'>
-              <a><button><div><CgMoreO/>More</div></button></a>
+              <a><button className={styles.button}><div><CgMoreO/>More</div></button></a>
             </Link>
           </div>
           <div>
             <Link href='/'>
-              <a><button><div><GiQuill/>Tweet</div></button></a>
+              <a><button id='tweetbutton'><div><GiQuill/>Tweet</div></button></a>
             </Link>
           </div>
       </div>

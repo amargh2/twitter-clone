@@ -1,0 +1,28 @@
+$blue: #1D9BF0;
+
+.postContainer {
+ display: grid;
+  img{
+    height:100px;
+    width:100px;
+    border-radius:50%;
+  }
+  div{
+    display:flex;
+    align-items:center;
+    justify-content:right;
+    gap:.3rem
+  }
+}
+
+.tweetbutton{
+  background-color:$blue;
+  padding: .75rem 1.5rem .75rem 1.5rem;
+  border-radius:2rem;
+  color:white;
+}
+
+.tweetcontainer{
+  display:flex;
+  justify-content:right;
+}
