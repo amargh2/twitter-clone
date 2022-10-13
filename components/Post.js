@@ -9,7 +9,7 @@ export default function Post() {
   return (
     <div className={styles.postContainer}>
           <div className={styles.avatar}>
-            <Image src='/mesmall.jpg' height={30} width={100} alt='avatar'></Image>
+            <Image src='/mesmall.jpg' layout='fixed' height={100} width={100} alt='avatar'></Image>
           </div>
 
             
