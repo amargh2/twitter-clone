@@ -22,7 +22,7 @@ $screen-xl-min: 1200px;
 
 .postcolumn{
   @media(min-width:$screen-lg-min) {
-    grid-column:4/8
+    grid-column:4/8;
   }
   grid-column:2/11;  
 }
@@ -34,3 +34,7 @@ $screen-xl-min: 1200px;
   grid-column:1/1
 }
 
+.middleContainer{
+  display:flex;
+  flex-direction:column;
+}

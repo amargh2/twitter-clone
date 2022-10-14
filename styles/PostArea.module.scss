@@ -1,0 +1,69 @@
+$blue: #1D9BF0;
+$darkerblue: #0387df;
+$lighterblue:#b0defd;
+$lightestblue:#d0e9fa;
+$large: 1200px;
+
+.PostsArea{
+  display:flex;
+  flex-direction:column;
+  justify-content: start;
+  font-size:small;
+  box-shadow: 0 0 0 .1px gray;
+  padding:1rem;
+}
+
+.authorAndDate{
+  display:flex;
+  justify-content:space-between;
+  font-weight:bold;
+}
+
+.post-content{
+  display:flex;
+  justify-content:start;
+}
+
+.buttonsContainer{
+  display:flex;
+  justify-content:space-between;
+}
+
+.like{
+  color:gray;
+  padding:.2em;
+}
+
+.liked{
+  padding:.2em;
+  color:rgb(249, 24, 128);
+}
+
+.retweet{
+  padding:.2em;
+  border-radius:50%;
+  
+}
+.retweet:hover{
+  background-color:rgb(218, 250, 218);
+  color:rgb(16, 224, 16);
+}
+.retweeted {
+  color:green;
+}
+
+.share{
+  padding:.2em;
+  border-radius:50%;
+}
+
+.share:hover{
+  background-color:$lightestblue;
+  color:$darkerblue;
+}
+
+.like:hover{
+  background-color:rgb(247, 160, 201);
+  border-radius: 50%;
+  color:red;
+}

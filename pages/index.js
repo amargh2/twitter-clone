@@ -2,6 +2,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import SideBar from '../components/SideBar'
 import Post from '../components/Post'
+import HomeBar from '../components/HomeBar'
+import PostsArea from '../components/PostsArea'
 export default function Home() {
   return (
     <div className='column'>
@@ -15,7 +17,9 @@ export default function Home() {
           <SideBar></SideBar>
         </div>
         <div className={styles.postcolumn}>
+        <div><HomeBar /></div>
           <Post></Post>
+          <PostsArea/>
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@ $screen-xl-min: 1200px;
       justify-content:start;
       padding:.25rem;
       button {
-        font-size:x-large;
+        font-size:large;
         border-radius: 2rem;
         border: white solid;
         background-color:white;
@@ -71,12 +71,16 @@ $screen-xl-min: 1200px;
 #tweetbutton {
   color:white;
   background-color:$blue;
-  padding:1rem;
+  padding:.5rem;
 }
 
+.imageContainer{
+  display:flex;
+  justify-content:center;
+}
 
 .logo{
   display:flex;
-  justify-content:start;
+  justify-content:center;
   color:$blue;
 }

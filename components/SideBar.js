@@ -16,7 +16,7 @@ export default function SideBar() {
   return (
       <div className={styles.sidebar}>
           <div className={styles.logo}>
-            <AiOutlineTwitter size={50}/>
+              <AiOutlineTwitter size={40}/>
           </div>
           <div>
             <Link href='/'>
@@ -60,13 +60,13 @@ export default function SideBar() {
           </div>
           <div>
             <Link href='/'>
-              <a><button id={styles.tweetbutton100}><div><GiQuill/><div className={styles.words}>Tweet</div></div></button></a>
+              <a><button id={styles.tweetbutton}><div><GiQuill/><div className={styles.words}>Tweet</div></div></button></a>
             </Link>
           </div>
           <div className={styles.sidebaravatar}>
             <Link href='/'>
-              <div>
-                <Image src='/mesmall.jpg' width={100} height={100}></Image>
+              <div className={styles.imageContainer}>
+                <Image src='/mesmall.jpg' width={50} height={50}></Image>
               </div>
             </Link>
           </div>

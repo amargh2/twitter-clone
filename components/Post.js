@@ -8,9 +8,7 @@ export default function Post() {
   
   return (
     <div className={styles.postContainer}>
-          <div className={styles.avatar}>
-            <Image src='/mesmall.jpg' layout='fixed' height={100} width={100} alt='avatar'></Image>
-          </div>
+            <Image src='/mesmall.jpg' className={styles.avatar} layout='fixed' height={55} width={55} alt='avatar'></Image>
 
             
               <div className={styles.container}>
@@ -29,12 +27,12 @@ export default function Post() {
                       </div>
                       <div className={styles.buttonscontainer}>
                     <div>
-                      <div className={styles.icon} onClick={()=>console.log('woah')}><AiOutlinePicture size={24}/></div>
-                      <div className={styles.icon}><AiOutlineGif size={24}/></div>
-                      <div className={styles.icon}><AiOutlineSmile size={24}/></div>
-                      <div className={styles.icon}><AiOutlineBarChart size={24}/></div>
-                      <div className={styles.icon}><AiOutlineCalendar size={24}/></div>
-                      <div className={styles.icon}><AiOutlineEnvironment size={24}/></div>
+                      <div className={styles.icon} onClick={()=>console.log('woah')}><AiOutlinePicture size={18}/></div>
+                      <div className={styles.icon}><AiOutlineGif size={18}/></div>
+                      <div className={styles.icon}><AiOutlineSmile size={18}/></div>
+                      <div className={styles.icon}><AiOutlineBarChart size={18}/></div>
+                      <div className={styles.icon}><AiOutlineCalendar size={18}/></div>
+                      <div className={styles.icon}><AiOutlineEnvironment size={18}/></div>
                     </div>
                     <div>
                       <button
