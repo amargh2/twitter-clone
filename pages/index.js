@@ -1,10 +1,13 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import SideBar from '../components/SideBar'
-import Post from '../components/Post'
+import MakePost from '../components/MakePost'
 import HomeBar from '../components/HomeBar'
 import PostsArea from '../components/PostsArea'
-export default function Home() {
+import Post from '../models/Post'
+import User from '../models/User'
+import connectMongo from '../utils/connectMongo'
+export default function Home({posts, err}) {
   return (
     <div className='column'>
       <Head>
@@ -18,10 +21,28 @@ export default function Home() {
         </div>
         <div className={styles.postcolumn}>
         <div><HomeBar /></div>
-          <Post></Post>
-          <PostsArea/>
+          <MakePost></MakePost>
+          <PostsArea posts={posts}/>
         </div>
       </div>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  try {
+    await connectMongo()
+    const posts = await Post.find({})
+    return {
+      props: {
+        posts: await JSON.parse(JSON.stringify(posts))
+      }
+    }
+  } catch (err) {
+   return {
+    props:{
+      err:err.message
+    }
+   }
+  }
 }
