@@ -4,34 +4,27 @@ import {AiFillHeart,
   AiOutlineHeart, 
   AiOutlineRetweet,
   AiOutlineShareAlt} from 'react-icons/ai'
-import axios from 'axios'
-import useSWR from 'swr'
 
 
+function PostsArea(props){
 
-function PostsArea({posts}) {
-  return (
-    <div>{posts}</div>
-  )
-  
-  /*return (
-    <div>
-      {posts.map(post => {
-        return (
-          // eslint-disable-next-line react/jsx-key
-          <div className={styles.PostsArea}>
-          <div className={styles.authorAndDate}>
+  const [liked, setLiked] = useState(false)
+  console.log(props.posts)
+  const posts = props.posts.map(post => {
+    return (
+      <div>
+        <div className={styles.authorAndDate}>
             <div>
-              <p>{post.user}</p>
+              <p>Anthony</p>
             </div>
             <div>
-              <p></p>
+              <p>@antho</p>
             </div>
             <div>
               <p>{post.date}</p>
             </div>
           </div>
-      
+        
             <div className='post-content'>
               <p>{post.content}</p>
             </div>
@@ -43,12 +36,14 @@ function PostsArea({posts}) {
               <AiOutlineRetweet className={styles.retweet} size={15}/>
               <AiOutlineShareAlt className={styles.share} size={15}/>
           </div>
-        </div>
-        )
-      })}
-       <div>{data} </div>
+      </div>
+    )
+  })
+  return (
+    <div className={styles.PostsArea}>
+      {posts}  
     </div>
-  )*/
+  )
 }
 
 

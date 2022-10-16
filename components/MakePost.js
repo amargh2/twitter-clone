@@ -8,7 +8,7 @@ export default function MakePost() {
   return (
     <div className={styles.postContainer}>
           <div className={styles.avatar}>
-            <Image src='/mesmall.jpg' layout='fixed' height={100} width={100} alt='avatar'></Image>
+            <Image src='/mesmall.jpg' layout='fixed' height={60} width={60} alt='avatar'></Image>
           </div>
 
             

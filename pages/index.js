@@ -5,8 +5,16 @@ import MakePost from '../components/MakePost'
 import HomeBar from '../components/HomeBar'
 import PostsArea from '../components/PostsArea'
 import Post from '../models/Post'
+import connectMongo from '../utils/connectMongo'
+import {AiFillHeart, 
+  AiOutlineHeart, 
+  AiOutlineRetweet,
+  AiOutlineShareAlt} from 'react-icons/ai'
 
-export default function Home({posts, err}) {
+export default function Home({data}) {
+  console.log({data})
+  const postsArray = data
+  
   return (
     <div className='column'>
       <Head>
@@ -21,20 +29,29 @@ export default function Home({posts, err}) {
         <div className={styles.postcolumn}>
         <div><HomeBar /></div>
           <MakePost></MakePost>
-          <PostsArea props={{posts}}/>
+          <div><PostsArea posts = {postsArray}></PostsArea></div>
         </div>
+        
       </div>
     </div>
   )
 }
 
-export async function getServerSideProps (context) {
+export async function getServerSideProps() {
   try {
-    const posts = await Post.find({})
-    return { props :{
-      posts:(await JSON.parse(JSON.stringify(posts)))
-    }}
-  } catch (err) {
-    console.error(err)
+    await connectMongo()
+    const data = await Post.find({}).sort({date:-1}).lean()
+    const posts = await JSON.parse(JSON.stringify(data))
+    return {
+      props: {
+        data:JSON.parse(JSON.stringify(data))        
+      }
+    }
+  } catch (error) {
+    return {
+      props: {
+        error: JSON.parse(JSON.stringify(error))
+      }
+    }
   }
 }
