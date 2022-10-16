@@ -5,12 +5,12 @@ export default async function makeUser(req, res, next){
    try {
     await connectMongo()
     const user = new User({
-    name:'Anthony',
-    username:'antho',
+    name:'Louise',
+    username:'ohLOUISE',
     })
     await user.save()
     res.redirect('/usercreated')
   } catch (err) {
-    console.log(err)
+    res.send('nope')
   }
 }

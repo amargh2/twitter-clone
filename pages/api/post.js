@@ -5,7 +5,7 @@ import User from "../../models/User"
 export default async function post(req, res, next) {
   try {
     const post = new Post({
-      user:await User.findById('6348cd05003bf479547c08ef'),
+      user:'634c254d5d75bb32fff110cd',
       content: req.query.message,
       date: new Date().toLocaleString()
     })

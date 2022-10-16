@@ -5,15 +5,8 @@ import clientPromise from "../../utils/mongodb";
 import { MongoClient } from "mongodb";
 export default async function getPosts(req, res, next) {
   try {
-    const pipeline = [
-      {
-        '$match': {}
-      }
-    ]
-    const client = await MongoClient.connect(process.env.MONGODB_URI)
-    const db = client.db('test')
-    const posts = await db.collection('posts').find({})
-    res.send(posts)
+    const posts = await Post.find({}).populate('user')
+    res.send(await JSON.parse(JSON.stringify(posts)))
   } catch (err) {
     res.send(err)
   }

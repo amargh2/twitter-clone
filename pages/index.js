@@ -5,8 +5,7 @@ import MakePost from '../components/MakePost'
 import HomeBar from '../components/HomeBar'
 import PostsArea from '../components/PostsArea'
 import Post from '../models/Post'
-import User from '../models/User'
-import connectMongo from '../utils/connectMongo'
+
 export default function Home({posts, err}) {
   return (
     <div className='column'>
@@ -22,27 +21,20 @@ export default function Home({posts, err}) {
         <div className={styles.postcolumn}>
         <div><HomeBar /></div>
           <MakePost></MakePost>
-          <PostsArea posts={posts}/>
+          <PostsArea props={{posts}}/>
         </div>
       </div>
     </div>
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps (context) {
   try {
-    await connectMongo()
     const posts = await Post.find({})
-    return {
-      props: {
-        posts: await JSON.parse(JSON.stringify(posts))
-      }
-    }
+    return { props :{
+      posts:(await JSON.parse(JSON.stringify(posts)))
+    }}
   } catch (err) {
-   return {
-    props:{
-      err:err.message
-    }
-   }
+    console.error(err)
   }
 }

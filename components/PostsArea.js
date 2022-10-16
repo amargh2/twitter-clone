@@ -1,22 +1,24 @@
 import styles from '../styles/PostArea.module.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {AiFillHeart, 
   AiOutlineHeart, 
   AiOutlineRetweet,
   AiOutlineShareAlt} from 'react-icons/ai'
-import Post from '../models/Post'
-import connectMongo from '../utils/connectMongo'
-import { Context } from 'react'
-import mongoose from 'mongoose'
+import axios from 'axios'
+import useSWR from 'swr'
+
+
+
 function PostsArea({posts}) {
-  
-  const [liked, setLiked] = useState(false)
-  
-  
   return (
+    <div>{posts}</div>
+  )
+  
+  /*return (
     <div>
       {posts.map(post => {
         return (
+          // eslint-disable-next-line react/jsx-key
           <div className={styles.PostsArea}>
           <div className={styles.authorAndDate}>
             <div>
@@ -44,9 +46,9 @@ function PostsArea({posts}) {
         </div>
         )
       })}
-      
+       <div>{data} </div>
     </div>
-  )
+  )*/
 }
 
 
