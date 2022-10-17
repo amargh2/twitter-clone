@@ -9,19 +9,26 @@ $large: 1200px;
   flex-direction:column;
   justify-content: start;
   font-size:small;
-  box-shadow: 0 0 0 .1px gray;
-  padding:1.5rem;
+  box-shadow: 0 0 0 .01px gray;
+  gap:.5em;
 }
 
 .authorAndDate{
   display:flex;
   justify-content:space-between;
-  font-weight:bold;
+  font-weight:600;
 }
 
 .post-content{
   display:flex;
   justify-content:start;
+}
+
+.post{
+  display:flex;
+  flex-direction:column;
+  box-shadow: 0 0 0 .1px gray;
+  padding:.2rem;
 }
 
 .buttonsContainer{

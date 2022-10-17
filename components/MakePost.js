@@ -29,11 +29,11 @@ export default function MakePost() {
                       <div className={styles.buttonscontainer}>
                     <div>
                       <div className={styles.icon} onClick={()=>console.log('woah')}><AiOutlinePicture size={24}/></div>
-                      <div className={styles.icon}><AiOutlineGif size={24}/></div>
-                      <div className={styles.icon}><AiOutlineSmile size={24}/></div>
-                      <div className={styles.icon}><AiOutlineBarChart size={24}/></div>
-                      <div className={styles.icon}><AiOutlineCalendar size={24}/></div>
-                      <div className={styles.icon}><AiOutlineEnvironment size={24}/></div>
+                      <div className={styles.icon}><AiOutlineGif size={18}/></div>
+                      <div className={styles.icon}><AiOutlineSmile size={18}/></div>
+                      <div className={styles.icon}><AiOutlineBarChart size={18}/></div>
+                      <div className={styles.icon}><AiOutlineCalendar size={18}/></div>
+                      <div className={styles.icon}><AiOutlineEnvironment size={18}/></div>
                     </div>
                     <div>
                       <button

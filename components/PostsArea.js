@@ -12,13 +12,13 @@ function PostsArea(props){
   console.log(props.posts)
   const posts = props.posts.map(post => {
     return (
-      <div>
+      <div className={styles.post}>
         <div className={styles.authorAndDate}>
             <div>
-              <p>Anthony</p>
+              <p>{post.user.name}</p>
             </div>
             <div>
-              <p>@antho</p>
+              <p>{post.user.username}</p>
             </div>
             <div>
               <p>{post.date}</p>

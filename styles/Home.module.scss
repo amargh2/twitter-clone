@@ -31,10 +31,16 @@ $screen-xl-min: 1200px;
   @media(min-width:$screen-lg-min) {
     grid-column:3/3
   }
-  grid-column:1/1
+  grid-column:1/1;
 }
 
 .middleContainer{
   display:flex;
   flex-direction:column;
+}
+
+.stickitup{
+  position:sticky;
+  top:0;
+  background-color:white;
 }

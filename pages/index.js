@@ -12,7 +12,6 @@ import {AiFillHeart,
   AiOutlineShareAlt} from 'react-icons/ai'
 
 export default function Home({data}) {
-  console.log({data})
   const postsArray = data
   
   return (
@@ -27,8 +26,10 @@ export default function Home({data}) {
           <SideBar></SideBar>
         </div>
         <div className={styles.postcolumn}>
-        <div><HomeBar /></div>
-          <MakePost></MakePost>
+        <div className={styles.stickitup}>
+            <HomeBar />
+            <MakePost></MakePost>
+        </div>
           <div><PostsArea posts = {postsArray}></PostsArea></div>
         </div>
         
@@ -40,7 +41,7 @@ export default function Home({data}) {
 export async function getServerSideProps() {
   try {
     await connectMongo()
-    const data = await Post.find({}).sort({date:-1}).lean()
+    const data = await Post.find({}).sort({date:-1}).populate('user').lean()
     const posts = await JSON.parse(JSON.stringify(data))
     return {
       props: {
