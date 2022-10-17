@@ -28,7 +28,9 @@ export default function Home({data}) {
         <div className={styles.postcolumn}>
         <div className={styles.stickitup}>
             <HomeBar />
-            <MakePost></MakePost>
+        </div>
+        <div>
+          <MakePost></MakePost>
         </div>
           <div><PostsArea posts = {postsArray}></PostsArea></div>
         </div>
