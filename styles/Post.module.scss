@@ -32,6 +32,7 @@ $screen-xl-min: 1200px;
 .avatar{
   display:flex;
   grid-column:1/1;
+  border-radius:50%;
   img {
     border-radius:50%;
   }

@@ -11,8 +11,6 @@ export default function PostCard(props) {
   const [liked, setLiked] = useState(false)
   const [id, setId] = useState(props.post._id)
   const post = props.post
-  const date = new Date(props.post.date)
-  const rightNow = new Date()
   return (
     <div className={styles.post}>
       <div className={styles.authorAndDate}>

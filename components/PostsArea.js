@@ -13,7 +13,10 @@ function PostsArea(props){
 
   return (
     <div className={styles.PostsArea}>
-      {props.posts.map(post => (<PostCard key={'key'} post = {post}></PostCard>))}
+      {props.posts.map(post => {(
+        <PostCard key={post.id} post = {post}></PostCard>)
+        }
+      )}
     </div>
   )
 }
