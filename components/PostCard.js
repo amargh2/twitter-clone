@@ -11,6 +11,7 @@ export default function PostCard(props) {
   const [liked, setLiked] = useState(false)
   const [id, setId] = useState(props.post._id)
   const post = props.post
+  console.log(post)
   return (
     <div className={styles.post}>
       <div className={styles.authorAndDate}>

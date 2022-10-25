@@ -5,7 +5,7 @@ import User from "../../models/User"
 export default async function post(req, res, next) {
   try {
     const post = new Post({
-      user:'634c254d5d75bb32fff110cd',
+      user:'634c23965d75bb32fff110c9',
       content: req.query.message,
       date: new Date().toLocaleString()
     })

@@ -8,13 +8,13 @@ export default function MakePost() {
   return (
     <div className={styles.postContainer}>
           <div className={styles.avatar}>
-            <Image src='/mesmall.jpg' layout='fixed' height={60} width={60} alt='avatar'></Image>
+            <Image src='/mesmall.jpg' layout='fixed' height={70} width={70} alt='avatar'></Image>
           </div>
 
             
               <div className={styles.container}>
                 <form action='/api/post'>
-                    <label for="message"></label>
+                    <label htmlFor="message"></label>
                       <div className={styles.form}>
                         <textarea className={styles.boxsizingBorder}
                           name="message"
@@ -22,7 +22,7 @@ export default function MakePost() {
                           id="message"
                           rows="7"
                           required
-                          minlength='10'
+                          minLength='10'
                           placeholder="What's happening?">
                         </textarea>
                       </div>

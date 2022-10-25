@@ -48,6 +48,7 @@ $screen-xl-min: 1200px;
           @media(min-width:$screen-xl-min) {
             .words{
               display:flex;
+              font-size:x-large;
             }
           }
         }
