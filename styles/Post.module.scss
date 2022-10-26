@@ -1,20 +1,4 @@
-$blue: #1D9BF0;
-$darkerblue: #0387df;
-$lighterblue:#b0defd;
-$lightestblue:#d0e9fa;
-$large: 1200px;
-
-// Small tablets and large smartphones (landscape view)
-$screen-sm-min: 576px;
-
-// Small tablets (portrait view)
-$screen-md-min: 768px;
-
-// Tablets and small desktops
-$screen-lg-min: 992px;
-
-// Large tablets and desktops
-$screen-xl-min: 1200px;
+@import 'variables';
 
 .postContainer {
   display:grid;
