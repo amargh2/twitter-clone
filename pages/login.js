@@ -4,7 +4,7 @@ import styles from '../styles/Login.module.scss'
 export default function LoginPage() {
   return (
     <div className={styles.loginContainer}>
-      <div>
+      <div className={styles.imageContainer}>
         <Image 
           src='/twitter.png' 
           width={1300} 

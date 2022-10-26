@@ -6,9 +6,12 @@ import Image from 'next/image'
 export default function LogInForm() {
   return (
     <div className={styles.loginform}>
+      <div className={styles.logoAndCTA}>
+        <AiOutlineTwitter size={60} className={styles.icon}/>
+        <div className={styles.words}>Happening now</div>
+        <div className={styles.wordsSmall}>Join Twitter Today</div>
+      </div>
       <form action='submit'>
-          <AiOutlineTwitter size={60} className={styles.icon}/>
-          <div className={styles.words}>Happening now</div>
           <label htmlFor='username'></label>
           <input
             type='text'
@@ -21,8 +24,12 @@ export default function LogInForm() {
             id='password'
             name='password'
             placeholder='Your password'></input>
-        <div><button>Login</button></div>
+          <div className={styles.buttonContainer}>
+          <div><button className={styles.btn}>Login</button></div>
+          <div><button className={styles.btn}>Don't have an account? Sign up.</button></div>
+      </div>
       </form>
+     
     </div>
   )
 }

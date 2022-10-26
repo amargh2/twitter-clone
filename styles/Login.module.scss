@@ -15,8 +15,10 @@ $screen-xl-min: 1200px;
 
 .loginform {
   display:flex;
+  flex-direction:column;
   justify-content:center;
-  .icon{
+  gap:2em;
+  .icon {
     color: $blue;
   }
   form {
@@ -26,34 +28,63 @@ $screen-xl-min: 1200px;
       display:flex;
       flex-direction:column;
     }
-    input{
+    input {
       padding:.75rem;
+      border-radius:.2rem;
+      border: .1rem gray solid;
     }
     input::placeholder{
       color:$blue;
       font-size:larger;
     }
-    button{
-        background-color:$blue;
-        padding: .4rem .6rem .4rem .6rem;
-        border-radius:2rem;
-        color:white;
-        border: white;
-        font-size:small;
-        font-weight:bold;
-      }
+    input:focus{
+      outline:none;
+      border: .1rem $blue solid;
+    }
+  }
+  
+  .buttonContainer{
+    display: flex;
+    flex-direction:column;
+    gap:.2rem;
+    .btn{
+      background-color:$blue;
+      padding: 1rem 2rem 1rem 2rem;
+      border-radius:2rem;
+      color:white;
+      border: white;
+      font-size:small;
+      font-weight:bold;
+    }
+    
   }
 }
 
+
 .loginContainer{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  place-items: center;
-  justify-items: center;
+  @media(min-width:$screen-md-min) {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    place-items: center;
+    justify-items: start;
+    gap:5rem;
+  }
+  .logoAndCTA{
+    display:flex;
+    flex-direction:column;
+    gap: .3rem;
+  }
   .words{
-    font-size:larger;
+    font-size:4rem;
     font-weight:bolder;
+  }
+  .wordsSmall {
+    font-size: 2rem;
   }
   
 }
 
+.imageContainer{
+  display:flex;
+  height:100vh;
+}
