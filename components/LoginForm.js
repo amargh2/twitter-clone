@@ -3,7 +3,12 @@ import {
   AiOutlineTwitter,
 } from 'react-icons/ai' 
 import Image from 'next/image'
+import { useSession, signIn, signOut } from "next-auth/react"
+
+
 export default function LogInForm() {
+  const {data: session} = useSession()
+  
   return (
     <div className={styles.loginform}>
       <div className={styles.logoAndCTA}>
@@ -11,24 +16,17 @@ export default function LogInForm() {
         <div className={styles.words}>Happening now</div>
         <div className={styles.wordsSmall}>Join Twitter Today</div>
       </div>
-      <form action='submit'>
-          <label htmlFor='username'></label>
-          <input
-            type='text'
-            required id='username'
-            name='username'
-            placeholder='Your username'></input>
-          <label htmlFor='password'></label>
-          <input type='password'
-            required
-            id='password'
-            name='password'
-            placeholder='Your password'></input>
+
           <div className={styles.buttonContainer}>
-          <div><button className={styles.btn}>Login</button></div>
-          <div><button className={styles.btn}>Not registered? Sign up.</button></div>
+         
+          <div>
+            <button 
+              className={styles.btn}
+              onClick={() => session ? signOut() : signIn('google', {callbackURL:'http://localhost:3000/'})}> 
+              Sign up or sign in with Google
+            </button>
+          </div>
       </div>
-      </form>
      
     </div>
   )

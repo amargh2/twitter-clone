@@ -5,6 +5,9 @@
   flex-direction:column;
   justify-content:center;
   gap:2em;
+  @media(max-width:$screen-sm-min) {
+    margin:1em;
+  }
   .icon {
     color: $blue;
   }
@@ -56,6 +59,9 @@
     justify-items: start;
     gap:5rem;
   }
+  display:flex;
+  flex-direction:column-reverse;
+  gap:.5em;
   .logoAndCTA{
     display:flex;
     flex-direction:column;
@@ -73,7 +79,7 @@
 
 .imageContainer{
   display:flex;
-  height:100vh;
+  height:95vh;
 }
 
 .footer {
