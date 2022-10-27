@@ -26,7 +26,7 @@ export default function LogInForm() {
             placeholder='Your password'></input>
           <div className={styles.buttonContainer}>
           <div><button className={styles.btn}>Login</button></div>
-          <div><button className={styles.btn}>Don't have an account? Sign up.</button></div>
+          <div><button className={styles.btn}>Not registered? Sign up.</button></div>
       </div>
       </form>
      

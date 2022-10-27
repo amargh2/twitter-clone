@@ -75,3 +75,17 @@
   display:flex;
   height:100vh;
 }
+
+.footer {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  background-color:lightgray;
+  padding: 0 1em 0 1em;
+  gap: .2em;  
+  div {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+}
