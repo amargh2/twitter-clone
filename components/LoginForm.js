@@ -22,7 +22,7 @@ export default function LogInForm() {
           <div>
             <button 
               className={styles.btn}
-              onClick={() => session ? signOut() : signIn('google', {callbackURL:'http://localhost:3000/'})}> 
+              onClick={() => session ? signOut() : signIn('google', {callbackURL:'http://localhost:3000'})}> 
               Sign up or sign in with Google
             </button>
           </div>

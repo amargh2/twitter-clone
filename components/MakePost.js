@@ -2,13 +2,13 @@ import styles from '../styles/Post.module.scss'
 import {AiOutlineBarChart, AiOutlinePicture,AiOutlineGif,AiOutlineSmile,AiOutlineCalendar, AiOutlineEnvironment} from 'react-icons/ai'
 import {useState} from 'react'
 import Image from 'next/image'
-export default function MakePost() {
+export default function MakePost(props) {
   const [formValue, setFormValue] = useState('');
   
   return (
     <div className={styles.postContainer}>
           <div className={styles.avatar}>
-            <Image src='/mesmall.jpg' layout='fixed' height={70} width={70} alt='avatar'></Image>
+            <Image src ='/mesmall.jpg' layout='fixed' height={70} width={70} alt='avatar'></Image>
           </div>
 
             

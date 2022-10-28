@@ -16,7 +16,7 @@ import { useRouter } from 'next/router'
 export default function Home({data}) {
   const postsArray = data
   const {data: session} = useSession()
-  if (session) {
+  console.log(session)
     return (
       <div className='column'>
         <Head>
@@ -33,7 +33,7 @@ export default function Home({data}) {
               <HomeBar />
           </div>
           <div>
-            <MakePost></MakePost>
+            <MakePost user={session}></MakePost>
           </div>
             <div><PostsArea posts = {postsArray}></PostsArea></div>
           </div>
@@ -41,12 +41,8 @@ export default function Home({data}) {
         </div>
       </div>
     )
-  } 
-  return (
-    <div>To engage in the DISCOURSE you gotta put your name on it babe</div>
-  )
-  
-}
+  }
+
 
 export async function getServerSideProps() {
   try {
