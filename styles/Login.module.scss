@@ -80,6 +80,16 @@
 .imageContainer{
   display:flex;
   height:95vh;
+  @media(max-width:$screen-sm-min) {
+   width:100vw; 
+  }
+  width:50vw;
+  background-color:$blue;
+  justify-content: center;
+  align-items:center;
+  .icon{
+    color:white;
+  }
 }
 
 .footer {
