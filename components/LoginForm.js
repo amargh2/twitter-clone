@@ -5,10 +5,8 @@ import {
 import Image from 'next/image'
 import { useSession, signIn, signOut } from "next-auth/react"
 
-
 export default function LogInForm() {
   const {data: session} = useSession()
-  
   return (
     <div className={styles.loginform}>
       <div className={styles.logoAndCTA}>
@@ -22,7 +20,7 @@ export default function LogInForm() {
           <div>
             <button 
               className={styles.btn}
-              onClick={() => session ? signOut() : signIn('google', {callbackURL:'http://localhost:3000'})}> 
+              onClick={() => session ? signOut() : signIn('google')}> 
               Sign up or sign in with Google
             </button>
           </div>

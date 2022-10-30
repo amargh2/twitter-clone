@@ -13,8 +13,8 @@ import {AiFillHeart,
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router'
 
-export default function Home({data}) {
-  const postsArray = data
+export default function Home({posts}) {
+  const postsArray = posts
   const {data: session} = useSession()
   console.log(session)
     return (
@@ -49,9 +49,10 @@ export async function getServerSideProps() {
     await connectMongo()
     const data = await Post.find({}).sort({date:-1}).populate('user').lean()
     const posts = await JSON.parse(JSON.stringify(data))
+    console.log(posts)
     return {
       props: {
-        data:JSON.parse(JSON.stringify(data))        
+        posts: await JSON.parse(JSON.stringify(posts))       
       }
     }
   } catch (error) {

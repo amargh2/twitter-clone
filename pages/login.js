@@ -2,6 +2,7 @@ import LogInForm from "../components/LoginForm"
 import LoginFooter from "../components/loginfooter"
 import Image from "next/image"
 import styles from '../styles/Login.module.scss'
+import {awaitSession, getSession, useSession} from 'next-auth/react'
 import {
   AiOutlineTwitter,
 } from 'react-icons/ai' 
@@ -21,3 +22,21 @@ export default function LoginPage() {
     
   )
 }
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context)
+
+  if (session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: { session }
+  }
+}
+

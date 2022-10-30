@@ -10,8 +10,6 @@ export default function MakePost(props) {
           <div className={styles.avatar}>
             <Image src ='/mesmall.jpg' layout='fixed' height={70} width={70} alt='avatar'></Image>
           </div>
-
-            
               <div className={styles.container}>
                 <form action='/api/post'>
                     <label htmlFor="message"></label>
