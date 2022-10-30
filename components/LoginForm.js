@@ -14,9 +14,7 @@ export default function LogInForm() {
         <div className={styles.words}>Happening now</div>
         <div className={styles.wordsSmall}>Join Twitter Today</div>
       </div>
-
-          <div className={styles.buttonContainer}>
-         
+          <div className={styles.buttonContainer}> 
           <div>
             <button 
               className={styles.btn}

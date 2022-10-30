@@ -14,7 +14,6 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router'
 
 export default function Home({posts}) {
-  const postsArray = posts
   const {data: session} = useSession()
   console.log(session)
     return (
@@ -35,7 +34,7 @@ export default function Home({posts}) {
           <div>
             <MakePost user={session}></MakePost>
           </div>
-            <div><PostsArea posts = {postsArray}></PostsArea></div>
+            <div><PostsArea posts = {posts}></PostsArea></div>
           </div>
           
         </div>

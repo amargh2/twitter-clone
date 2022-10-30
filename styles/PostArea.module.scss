@@ -3,7 +3,7 @@
 .PostsArea{
   display:flex;
   flex-direction:column;
-  justify-content: start;
+  justify-content: flex-start;
   font-size:small;
   box-shadow: 0 0 0 .01px gray;
   gap:.5em;
@@ -18,7 +18,7 @@
 
 .post-content{
   display:flex;
-  justify-content:start;
+  justify-content:flex-start;
 }
 
 .post{

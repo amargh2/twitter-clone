@@ -7,19 +7,18 @@ import {
 import styles from '../styles/PostArea.module.scss'
 import { useState } from 'react'
 
-export default function PostCard(props) { 
+export default function PostCard({post}) { 
   const [liked, setLiked] = useState(false)
-  const [id, setId] = useState(props.post._id)
-  const post = props.post
+  const [id, setId] = useState(post._id)
   console.log(post)
-  return (
+  if (post) return (
     <div className={styles.post}>
       <div className={styles.authorAndDate}>
         <div>
-          <p>{post.user.name}</p>
+          <p>{post._id}</p>
         </div>
         <div className={styles.username}>
-          <p>@{post.user.username}</p>
+          <p>@</p>
         </div>
         <div className={styles.date}>
           <p>{post.date}</p>

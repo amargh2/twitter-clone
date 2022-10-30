@@ -6,13 +6,12 @@ import {AiFillHeart,
   AiOutlineShareAlt} from 'react-icons/ai'
 import PostCard from './PostCard'
 
-function PostsArea(props){
-
+function PostsArea({posts}){
   const [liked, setLiked] = useState(false)
-  console.log(props.posts)
+  console.log(posts)
   return (
     <div className={styles.PostsArea}>
-      {props.posts ? props.posts.map(post => {
+      {posts ? posts.map(post => {
         return (
         <PostCard key={post.id} post = {post}></PostCard>)
         }) : (<div>no data</div>)}
