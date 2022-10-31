@@ -80,7 +80,7 @@
 .imageContainer{
   display:flex;
   height:95vh;
-  @media(max-width:$screen-sm-min) {
+  @media(max-width:$screen-md-min) {
    width:100vw; 
   }
   width:50vw;
