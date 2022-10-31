@@ -50,6 +50,21 @@
   }
 }
 
+.registerbuttonContainer {
+  display: flex;
+  justify-content:center;
+  padding:.2rem;
+  button {
+    background-color:$blue;
+      padding: 1rem;
+      border-radius:2rem;
+      color:white;
+      border: white;
+      font-size:small;
+      font-weight:bold;
+  }
+}
+
 
 .loginContainer{
   @media(min-width:$screen-md-min) {
@@ -104,5 +119,16 @@
     justify-content:center;
     align-items:center;
     font-size:smaller;
+  }
+}
+
+//registration form styles
+
+.registrationform {
+  display:flex;
+  flex-direction:column;
+  form {
+    display:flex;
+    flex-direction:column;
   }
 }
