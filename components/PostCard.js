@@ -10,15 +10,14 @@ import { useState } from 'react'
 export default function PostCard({post}) { 
   const [liked, setLiked] = useState(false)
   const [id, setId] = useState(post._id)
-  console.log(post)
   if (post) return (
     <div className={styles.post}>
       <div className={styles.authorAndDate}>
         <div>
-          <p>{post._id}</p>
+          <p>{post.user.name}</p>
         </div>
         <div className={styles.username}>
-          <p>@</p>
+          <p>@{post.user.username}</p>
         </div>
         <div className={styles.date}>
           <p>{post.date}</p>

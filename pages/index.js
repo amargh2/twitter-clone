@@ -11,11 +11,12 @@ import {AiFillHeart,
   AiOutlineRetweet,
   AiOutlineShareAlt} from 'react-icons/ai'
 import { useSession, signIn, signOut } from "next-auth/react"
-import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import router from 'next/router'
+import { unstable_getServerSession } from 'next-auth'
 
 export default function Home({posts}) {
   const {data: session} = useSession()
-  console.log(session)
     return (
       <div className='column'>
         <Head>
@@ -45,6 +46,16 @@ export default function Home({posts}) {
 
 export async function getServerSideProps() {
   try {
+    const session = await unstable_getServerSession(req, res, authOptions)
+    console.log(session)
+    if (!session) {
+      return {
+        redirect: {
+          destination:'/login',
+          permanent:false
+        }
+      }
+    }
     await connectMongo()
     const data = await Post.find({}).sort({date:-1}).populate('user').lean()
     const posts = await JSON.parse(JSON.stringify(data))

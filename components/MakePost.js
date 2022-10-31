@@ -1,14 +1,15 @@
 import styles from '../styles/Post.module.scss'
 import {AiOutlineBarChart, AiOutlinePicture,AiOutlineGif,AiOutlineSmile,AiOutlineCalendar, AiOutlineEnvironment} from 'react-icons/ai'
 import {useState} from 'react'
+import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 export default function MakePost(props) {
   const [formValue, setFormValue] = useState('');
-  
+  const {data:session} = useSession()
   return (
     <div className={styles.postContainer}>
           <div className={styles.avatar}>
-            <Image src ='/mesmall.jpg' layout='fixed' height={70} width={70} alt='avatar'></Image>
+            <Image src ={session ? session.user.image : ''} layout='fixed' height={70} width={70} alt='avatar'></Image>
           </div>
               <div className={styles.container}>
                 <form action='/api/post'>

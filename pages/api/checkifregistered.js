@@ -7,14 +7,14 @@ export default async function checkifregistered(req, res) {
     const session = await unstable_getServerSession(req, res, authOptions)
     const userid = await User.find({email:session.user.email})   
     if (session) {
-      console.log(session.user)
       console.log('results of user query:' + userid)
-      userid ? res.redirect('/') : res.redirect('/register')
+      console.log(userid)
+      userid[0] === undefined ? res.redirect('/register') : res.redirect('/')
     }
     if (!session) {
       res.redirect('/login')
     }
   } catch (error) {
-    res.send(error)
+    res.redirect('/login')
   }
 }

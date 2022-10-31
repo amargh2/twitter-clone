@@ -26,7 +26,14 @@ export default function LoginPage() {
 export async function getServerSideProps(context) {
   const session = await getSession(context)
 
-
+  if (session) {
+    return {
+      redirect: {
+        destination: '/api/checkifregistered',
+        permanent: false,
+      },
+    }
+  }
 
   return {
     props: { session }

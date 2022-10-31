@@ -21,7 +21,7 @@ export default function Register(props) {
         <span className='helpertext'>
         {check(userName)}
       </span>
-      <button type="submit"> Decisions.. </button>
+      <button type="submit"> Choices.. </button>
       </form>
     </div>
     </div>

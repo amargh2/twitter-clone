@@ -11,8 +11,12 @@ import Link from 'next/link'
 import {FaHashtag, FaRegBookmark, FaRegBell, FaList} from 'react-icons/fa'
 import styles from '../styles/SideBar.module.scss' 
 import Image from "next/image"
+import { signIn, signOut } from "next-auth/react"
+import { useSession } from "next-auth/react"
+import { userAgent } from "next/server"
 export default function SideBar() {
-
+  const [clicked, setClicked] = useState(false)
+  const {data:session} = useSession()
   return (
       <div className={styles.sidebar}>
           <div className={styles.logo}>
@@ -63,10 +67,12 @@ export default function SideBar() {
               <a><button id={styles.tweetbutton}><div><GiQuill/><div className={styles.words}>Tweet</div></div></button></a>
             </Link>
           </div>
-          <div className={styles.sidebaravatar}>
+          <div className={styles.sidebaravatar} onClick = {() => setClicked(clicked === true ? false : true)}>
             <Link href='/'>
               <div className={styles.imageContainer}>
-                <Image src='/mesmall.jpg' width={50} height={50}></Image>
+                <Image src={session ? session.user.image : ''} alt='user picture' width={50} height={50}></Image>
+                {clicked === true ? (<div><button onClick={() => session ? signOut() : signIn('google')}> 
+                {session ? 'Log Out' : 'Log In'}</button></div>) : <></>}
               </div>
             </Link>
           </div>

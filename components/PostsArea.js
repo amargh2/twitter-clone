@@ -8,7 +8,6 @@ import PostCard from './PostCard'
 
 function PostsArea({posts}){
   const [liked, setLiked] = useState(false)
-  console.log(posts)
   return (
     <div className={styles.PostsArea}>
       {posts ? posts.map(post => {
